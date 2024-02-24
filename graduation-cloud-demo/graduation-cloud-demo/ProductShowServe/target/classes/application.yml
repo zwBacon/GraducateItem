@@ -1,0 +1,59 @@
+server:
+  port: 3000
+
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 60000
+        read-timeout: 60000
+
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/productdata?useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: 264017
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        configds:
+          url: jdbc:mysql://localhost:3306/configdata?useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: 264017
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+  application:
+    name: productshow
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+  cloud:
+    nacos:
+      server-addr: localhost:8848 #nacos服务地址
+
+
+mybatis:
+  type-aliases-package: com.zw.graducate.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+alipay:
+  app-id: 9021000134654749
+  app-private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCii0qmQsT6f6vF3rOlgkRUW6haPb5Hh5avjpZztH33mdeRAGJ6SzNQjtuzzQJm4e6KXn8QmcrVItGSBIWC3e3npAGLdtm4YPL+wCjEXjr8aMtbQ9r2ryh+kgNFCZI3jljzARTvQKUsi/lUAaK7oUgj1+J08tVUN8Jt7HhbFbJXrdoZJ53gYUSMfnVWnltFWTUGDQqiRqs/JeBeleptGtyVqT6ZERHwt/cARSGU0l0w5gbHelDFAghWpIj/sQHHwGc/UD/urj8I7jntRNTe/5oB/8bBXPEIXKfX9riZsrYRkswKIJQt2Y74u6tFxMMXSvBR8wkc3GEqL0ViBFhPzL6NAgMBAAECggEAERfs5ccnx+AdRFXDNqiYXva0oajUldkgc53fHJPim2NGVC1iLdIyt0oOuL3afs9Lsql1W12RAxECUQTAtZ55Il8Q+oWpJ8aqRzgWEXCHa3vpxtM/96k77POV/HChO85wdD2s4ew+cozVz4vMfUbcu0g8vGe9H3otrDmt/oYtlyK6PbuKXtvBGmX5mJAt9x+A0wiV8MhrupEXRFhno/6uT72Q/OPAwXt0ESzM/C7LFqmNiHWErBo8U+TnwynRxknteNny5blLI6zek0DS2xSGOykriVilOAFbH9mD+HXw+PtDwhsCUj1zVitF4rqVdUZj+1uL1w20VnZ/pX2iDnR2UQKBgQDdGXEKBL6kGzY1N/hW4kGFP6A8PcNf+lBxgVojvgSn5I2Fp+2VtRRKii7/tPQwSBlU3mc3OOBL0uF04vfSBK58D7WB4DE7hOcGwZFldtQT+w16EbwzDUmb00WifbfQKFovZ2VsPbkv6lT6BGJWAeI2gAsim/+79f9Lby8KRb0xFwKBgQC8M6Y66048Xph7mvFAlkwi+jn00tGTXem4W2NybOIeKqZRlsaQGLc6eoL1tdQZZD5/ncfglPA+cP7R2AWFVsSEtmLi6oZ9nGUEgzxYh4sCsiFyeuA8/ac2K3Jkojk/ZSBdvHsaXvliouHckNs2j4u+XGXspabh91BJvEHuph9r+wKBgHCycCDYLEg/qpDT15yJtTXzKXyrSrPYRjqk4UpIp9zgLZbL8tkVNKON7cje9nzJs0fEGT5XmlRryAmpSwJc6odIBo+Ns+qPoqaZ8b+TIySQGd13vsMS6csolFzv0cqjVtzEyjiy+XrH6cqKg4ktap23BHX+qAqpqBhOMt78jyO/AoGBAKSEHda5ZS2en3rFigkkmS+mP02FkJBa8vkmYjtfdRZbwAHoZHEIOfuTprE1nlAH8h5KhbQLXiunSQmU5daWb7l3Wd/0lVZuhVu5gOH+soTLxDM3uJd4QFg5CIlxyctiEjX+kjoONcCElB3kPsxmFQl16d9BOy2irHuYZqZAb41LAoGBAJ5FfEOimj9hqgkF9bRWMvGWsOus85ETF4CLNyN8Mhx/bzy9ctTUG4cv6JnO474bI0QSqRaJPk/RwX6853OMu9ZK6XIfr9ixuPH2FzIXBq8waC37+EVCk8B/AuURt1IOJVM8BkPmnKH6Xawp2TX8vQq4SeoRQLhgdjUP8f/hP4pp
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5p9A5KMOSSXZK+qVSkPrO84hoHfbXmUgho58haW4Ud7GOjvElT8NKWpsTxsdMXyrqrrnTzBRb7kIWre3pneD5BUGyvsAsHxIsV0JoAvoQOhpdkAxjaftMu4zDC3ONo+CqHMq/8O4s4jVkNXScCGR7cHxJ/L+A8aCSQ08kJ/HSwW0/PMZNC0NtOGTPegSsEtYWL7RU/WIIhdmx5kiAXZazbce7g/bpX2aClz3JOeurQXbCyF2vlFAe0E7b31SQleBoaJ/X/JjK/QR4HKzNRyr+jFTE2W4opZ+53UBSPoQMfb+bfv6uac+L6sLB+bxpYLpkhdvorDTpjOqn0kx/CrILQIDAQAB
+  notify-url: http://s3engq.natappfree.cc/alipay/notify
+
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+  level:
+    sql: debug

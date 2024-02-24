@@ -1,0 +1,6 @@
+com\zw\graducate\mapper\LogHandlerMapper.class
+com\zw\graducate\entity\Log.class
+com\zw\graducate\MiddleWareApplication.class
+com\zw\graducate\aop\BeforeAopHandler.class
+com\zw\graducate\controller\XXcontroller.class
+com\zw\graducate\entity\Log$LogBuilder.class

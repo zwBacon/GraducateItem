@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="UserClientServe" />
+        <module name="OrderHandelServe" />
+        <module name="MiddleWareServe" />
+        <module name="ProductShowServe" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MiddleWareServe" options="-parameters" />
+      <module name="OrderHandelServe" options="-parameters" />
+      <module name="ProductShowServe" options="-parameters" />
+      <module name="UserClientServe" options="-parameters" />
+      <module name="graduation-cloud-demo" options="" />
+    </option>
+  </component>
+</project>

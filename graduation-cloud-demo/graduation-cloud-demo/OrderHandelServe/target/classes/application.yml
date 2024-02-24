@@ -1,0 +1,47 @@
+server:
+  port: 4000
+
+
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 60000
+        read-timeout: 60000
+
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        order:
+          url: jdbc:mysql://localhost:3306/orderdata?useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: 264017
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  application:
+    name: orderHandelServe
+  cloud:
+    nacos:
+      server-addr: localhost:8848 #nacos服务地址
+
+
+mybatis:
+  type-aliases-package: com.zw.graducate.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+  level:
+    com.zw.graducate.mapper: debug
